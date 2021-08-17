@@ -43,6 +43,8 @@ module Groupdate
             ["strftime(?, #{column})", format]
           end
 
+        # TODO week_start, day_start, custom period
+        # TODO move to better place
         if !@time_zone.utc_offset.zero? || period == :quarter
           utc = ActiveSupport::TimeZone["UTC"]
           db = @relation.connection.raw_connection
